@@ -8,45 +8,47 @@ body {
 header {
   font-family: "Inconsolata", monospace;
   font-weight: bold;
-  font-size: 12px;
-  padding: 20px 24px;
+  font-size: 0.75em;
+  padding: 1em 1.25em;
+}
+header h1 {
+  line-height: 1em;
+  letter-spacing: -0.08em;
 }
 main {
-  padding: 54px 24px;
+  padding: 3em 1.25em;
 }
 footer {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.75em;
   text-align: center;
-  padding: 42px 24px;
+  padding: 3em 1.25em;
 }
 
 .notfound__image {
   width: 100%;
 }
 .notfound__title {
-  font-size: 48px;
-  line-height: 71px;
+  font-size: 2.5em;
+  line-height: 1.5em;
   letter-spacing: -0.035em;
-  margin-right: -24px;
 }
 .notfound__message {
-  line-height: 27px;
+  line-height: 1.5em;
   letter-spacing: -0.035em;
   color: #4f4f4f;
-  margin: 29px 0 67px 0;
+  margin: 1.5em 0 3.5em 0;
 }
 .notfound__home-link {
   font-weight: bold;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 0.75em;
   letter-spacing: -0.035em;
   text-transform: uppercase;
   color: white;
   background-color: #333333;
-  width: 216px;
-  height: 68px;
+  width: 16em;
+  height: 5em;
   display: flex;
   justify-content: center;
   align-items: center;
