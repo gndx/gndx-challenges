@@ -25,6 +25,10 @@ footer {
   text-align: center;
   padding: 3em 1.25em;
 }
+footer a {
+  color: black;
+  text-decoration: none;
+}
 
 .main-container {
   max-width: 350px;
