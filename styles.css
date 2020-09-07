@@ -8,10 +8,10 @@ body {
 header {
   font-family: "Inconsolata", monospace;
   font-weight: bold;
-  font-size: 0.75em;
   padding: 1em 1.25em;
 }
 header h1 {
+  font-size: 1.25em;
   line-height: 1em;
   letter-spacing: -0.08em;
 }
@@ -24,6 +24,11 @@ footer {
   font-size: 0.75em;
   text-align: center;
   padding: 3em 1.25em;
+}
+
+.main-container {
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .notfound__image {
@@ -58,4 +63,19 @@ footer {
 @media screen and (min-width: 375px) {
 }
 @media screen and (min-width: 1440px) {
+  header {
+    padding: 2.25em 4.25em;
+  }
+  .main-container {
+    display: flex;
+    max-width: 1240px;
+  }
+  .notfound__title {
+    font-size: 3.5em;
+  }
+  .notfound__message {
+    font-size: 1.5em;
+    margin: 1.5em 0 2.5em 0;
+    width: 70%;
+  }
 }
