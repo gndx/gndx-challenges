@@ -1,13 +1,13 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: Andres Jurado
+- GitHub: https://github.com/anmijurane
+- Twitter: https://twitter.com/anmijurane
+- Twitch: N/A
+- Repositorio: https://github.com/anmijurane/notFoundChange
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [x] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
