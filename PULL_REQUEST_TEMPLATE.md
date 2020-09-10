@@ -1,13 +1,14 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
+- Name: Ramiro Altamirano López
+- GitHub: https://github.com/Rams-dev
 - Twitter:
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/Rams-dev/ERROR-NOTFOUND-PAGE
+- Demostracion: https://rams-dev.github.io/ERROR-NOTFOUND-PAGE/
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [x] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
