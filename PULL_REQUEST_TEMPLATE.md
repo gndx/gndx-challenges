@@ -1,13 +1,13 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
+- Name: Rulo Vargas
+- GitHub: https://github.com/deoraczo 
+- Twitter: 
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/deoraczo/notfound-page
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [x] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
