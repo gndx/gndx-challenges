@@ -1,13 +1,13 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: Zajith Corro
+- GitHub: https://github.com/ZajithCorro
+- Twitter: https://twitter.com/ZajithCorro
+- Twitch: https://www.twitch.tv/zajithcorro
+- Repositorio: https://github.com/ZajithCorro/404-not-found-page
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [X] 404 Not found
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
