@@ -1,10 +1,10 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
+- Name: Yeisson Esteban Jimenez Bustos
+- GitHub: https://github.com/EstebanJS
+- Twitter: @EstebanJS_
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/EstebanJS/ip-address-tracker-master
 
 ## challenge:
   - [ ] 404 Not fount
@@ -12,7 +12,7 @@
   - [ ] Image Uploader
   - [ ] Weather app
   - [ ] Github Jobs
-  - [ ] IP Address Tracker
+  - [x] IP Address Tracker
   - [ ] Authentication App
   - [ ] Pricing component
   - [ ] Chat Group
