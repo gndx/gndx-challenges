@@ -1,13 +1,13 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: Anthony Elias Challout 
+- GitHub: https://github.com/anthonyeca
+- Instagram: @Aechallouta
+- Twitch: https://twitch.tv/Lahjak
+- Repositorio: https://github.com/anthonyeca/gndx-challenges
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [✓] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
