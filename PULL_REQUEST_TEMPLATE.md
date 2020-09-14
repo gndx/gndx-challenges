@@ -1,13 +1,13 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
+- Name: Josué
+- GitHub: https://github.com/fjota
 - Twitter:
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/fjota/404-not-found
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [X] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
