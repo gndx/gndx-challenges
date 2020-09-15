@@ -1,0 +1,30 @@
+main.space {
+	padding: 0 20px;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(to bottom, #11131d, #040e47);
+	background-attachment: fixed;
+	overflow: hidden;
+	display: grid;
+	grid-template: repeat(2, 1fr) / 1fr;
+	row-gap: 20px;
+}
+.main-404,
+.main-info {
+	justify-self: center;
+	width: 100%;
+	position: relative;
+}
+
+@media screen and (min-width: 425px) {
+	main.space {
+		padding: 0;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	main.space {
+		grid-template: 1.5fr 1fr / 1fr;
+	}
+}

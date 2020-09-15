@@ -1,0 +1,58 @@
+.container-astronaut {
+	position: fixed;
+}
+.container-astronaut {
+	top: 300px;
+	left: 50px;
+	transition-property: top, left;
+	transition-duration: 4s;
+	transition-timing-function: ease-in;
+	animation: moveAstronaut linear infinite 3s alternate;
+	z-index: 90;
+}
+.container-astronaut::before {
+	display: none;
+	content: attr(message);
+	position: absolute;
+	width: 120px;
+	height: 60px;
+	text-align: center;
+	font-size: 16px;
+	bottom: calc(100% - 10px);
+	left: calc(100% - 60px);
+	clip-path: polygon(
+		0% 0%,
+		100% 0%,
+		100% 75%,
+		48% 76%,
+		21% 100%,
+		26% 75%,
+		0% 75%
+	);
+	padding: 10px;
+	background-color: rgb(255, 255, 255);
+	color: rgb(40, 18, 61);
+	border-radius: 5px;
+	transition: display 0.3s linear;
+}
+.container-astronaut.active::before {
+	display: block;
+}
+@keyframes moveAstronaut {
+	from {
+		transform: translate(0) rotate(5deg);
+	}
+	50% {
+		transform: translate(3px, 4px) rotate(-8deg);
+	}
+	to {
+		transform: translate(6px, -5px) rotate(2deg);
+	}
+}
+
+@media screen and (min-width: 600px) {
+	img.astronaut {
+		width: 120px;
+		cursor: pointer;
+	}
+}

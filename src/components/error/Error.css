@@ -1,0 +1,105 @@
+.main-404 {
+	position: relative;
+	align-self: flex-end;
+	font-family: 'Long Cang', cursive;
+	font-size: 9em;
+	font-weight: bold;
+	display: grid;
+	grid-template: 1fr / repeat(3, 1fr);
+}
+.main-404::before {
+	font-family: 'Lato', sans-serif;
+	content: 'ERROR';
+	position: absolute;
+	bottom: calc(100% - 20px);
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 4rem;
+	font-weight: 700;
+	color: rgb(148, 48, 48);
+	z-index: 80;
+}
+.main-404 p {
+	text-shadow: 0px 0px 70px rgba(255, 187, 0, 0.7);
+	background: linear-gradient(
+		to bottom right,
+		rgb(250, 28, 176),
+		rgb(241, 27, 27)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: latido linear infinite 1s alternate;
+}
+@keyframes latido {
+	from {
+		transform: scale(1);
+	}
+	25% {
+		transform: scale(0.9);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	75% {
+		transform: scale(0.8);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+p.right {
+	padding-left: 10px;
+}
+.main-404 .moon {
+	position: relative;
+	z-index: 100;
+	animation: linear rotateMoon infinite 15s;
+	justify-self: center;
+}
+@keyframes rotateMoon {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media screen and (min-width: 375px) {
+	.main-404 {
+		font-size: 10em;
+	}
+	p.right {
+		padding-left: 8px;
+	}
+}
+
+@media screen and (min-width: 425px) {
+	.main-404 {
+		font-size: 14em;
+		width: 425px;
+		margin: 0 auto;
+	}
+	p.left {
+		padding-left: 15px;
+	}
+	.container-moon {
+		padding-left: 10px;
+	}
+	img.moon {
+		width: 120px;
+	}
+	.main-404::before {
+		bottom: calc(100% - 40px);
+		font-size: 5rem;
+		transform: translateX(-47%);
+	}
+}
+@media screen and (min-width: 600px) {
+	p.left {
+		padding-left: 10px;
+	}
+	img.moon {
+		width: 150px;
+	}
+}

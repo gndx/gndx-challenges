@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Long+Cang&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+}
+
+img {
+	width: 100px;
+}

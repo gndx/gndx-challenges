@@ -1,0 +1,23 @@
+main.space i {
+	position: absolute;
+	background: #fff;
+	border-radius: 50%;
+	/* transition-property: top, left;
+	transition-duration: 1s;
+	transition-timing-function: linear; */
+	animation: animate linear infinite forwards;
+}
+@keyframes animate {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+	10%,
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+}
