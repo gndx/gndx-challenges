@@ -36,7 +36,7 @@ section p {
   animation: float 5s ease-in-out infinite;
 }
 
-div img {
+#bg{
   max-width: 100%;
   left: 0px;
   top: 0px;
@@ -57,11 +57,17 @@ div img {
   and (-webkit-min-device-pixel-ratio: 2) {
     
     section p {
-        top: 80%;
+      top: 62%;
+      left: 7%;
     }
 
-    img#optionalstuff  {
+    #bg {
         display: none;
+    }
+
+    section h2{
+      top: 39%;
+      left: -2%;
     }
 }
 
@@ -71,11 +77,17 @@ div img {
   and (-webkit-min-device-pixel-ratio: 2) {
     
     section p {
-        top: 70%;
+      top: 60%;
+      left: 21%;
     }
 
-    img#optionalstuff  {
+    #bg  {
         display: none;
+    }
+
+    section h2{
+      top: 50%;
+      left: 19%;
     }
 }
 
