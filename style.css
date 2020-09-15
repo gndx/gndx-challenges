@@ -18,20 +18,22 @@ section {
 section h2 {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 37%;
   color: #fff;
   font-size: 4em;
-  transform: translate(-50%, -50%);
+  transform: translateY(0px);
+  animation: float 5s ease-in-out infinite;
 }
 
 section p {
   position: absolute;
   top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 38%;
+  transform: translateY(0px);
   color: #fff;
   font-size: 1.4em;
   font-weight: 300;
+  animation: float 5s ease-in-out infinite;
 }
 
 div img {
@@ -75,4 +77,18 @@ div img {
     img#optionalstuff  {
         display: none;
     }
+}
+
+@keyframes float{
+  0%{
+    transform: translateY(0px);
+  }
+
+  50%{
+    transform: translateY(-20px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
 }
