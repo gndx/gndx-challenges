@@ -1,13 +1,13 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
+- Name: Darwin Gómez
+- GitHub: darwintnt
+- Twitter: @darwintnt
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/darwintnt/404NotFound
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [x] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
