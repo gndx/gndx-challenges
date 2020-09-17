@@ -1,37 +1,117 @@
-# gndx-challenges
-10 Retos para desarrolladores Web
+### Social Dashboard with an simple API
 
-### Envia tu reto:
+<b>This is my first project in Svelte</b>
 
-1. Realiza un **Fork** de este repositorio.
-2. Desarrolla tu reto a eleccion:
+<b>Features</b>
 
- - [404 Not Found](https://devchallenges.io/challenges/wBunSb7FPrIepJZAg0sY)
- - [Social media dashboard](https://www.frontendmentor.io/solutions/social-media-dashboard-gXxCRA95_)
- - [Image Uploader](https://devchallenges.io/challenges/O2iGT9yBd6xZBrOcVirx)
- - [Weather App](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv)
- - [Github Jobs](https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps)
- - [IP Address Tracker](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0)
- - [Authentication App](https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw)
- - [Pricing Component](https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC)
- - [Chat Group](https://devchallenges.io/challenges/UgCqszKR7Q7oqb4kRfI0)
- - [Trello Clone](https://devchallenges.io/challenges/wP0LbGgEeKhpFHUpPpDh)
+<ul>
+  <li>I build an API to use in this project.</li>
+  <li>I use cloudinary to save icon.</li>
+</ul>
 
-3. ¿Terminaste? Crea un *Pull request*, no olvides llenar el [formato del Pull Request](./PULL_REQUEST_TEMPLATE.md).
-4. Espera la revision.
+Preview:
 
-### Comunidad en Discord
-Tiendes dudas, comentarios o quieres aportar entra a discord: [https://discord.gg/brutEYf](https://discord.gg/brutEYf)
+- https://laughing-fermat-30077f.netlify.app/
+  ![image](https://repository-images.githubusercontent.com/296186495/b1aff580-f85c-11ea-8351-5f14651bc83b)
 
-### LIVE
+_Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
 
-Proximamente, tendremos un LIVE para revisar los mejores retos. (Una vez por mes).
+---
 
-### Premios
+# svelte app
 
-eBooks / Pack de Stickers
+This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
-### Participantes:
+To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
 
-1. @gndx
-2. 
+```bash
+npx degit sveltejs/template svelte-app
+cd svelte-app
+```
+
+_Note that you will need to have [Node.js](https://nodejs.org) installed._
+
+## Get started
+
+Install the dependencies...
+
+```bash
+cd svelte-app
+npm install
+```
+
+...then start [Rollup](https://rollupjs.org):
+
+```bash
+npm run dev
+```
+
+Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+
+By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+
+## Building and running in production mode
+
+To create an optimised version of the app:
+
+```bash
+npm run build
+```
+
+You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+
+## Single-page app mode
+
+By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
+
+If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for _any_ path. You can make it so by editing the `"start"` command in package.json:
+
+```js
+"start": "sirv public --single"
+```
+
+## Using TypeScript
+
+This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
+
+```bash
+node scripts/setupTypeScript.js
+```
+
+Or remove the script via:
+
+```bash
+rm scripts/setupTypeScript.js
+```
+
+## Deploying to the web
+
+### With [Vercel](https://vercel.com)
+
+Install `vercel` if you haven't already:
+
+```bash
+npm install -g vercel
+```
+
+Then, from within your project folder:
+
+```bash
+cd public
+vercel deploy --name my-project
+```
+
+### With [surge](https://surge.sh/)
+
+Install `surge` if you haven't already:
+
+```bash
+npm install -g surge
+```
+
+Then, from within your project folder:
+
+```bash
+npm run build
+surge public my-project.surge.sh
+```
