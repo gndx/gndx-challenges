@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+  background: #000;
+}
+
+section {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+section h2 {
+  position: absolute;
+  top: 50%;
+  left: 37%;
+  color: #fff;
+  font-size: 4em;
+  transform: translateY(0px);
+  animation: float 5s ease-in-out infinite;
+}
+
+section p {
+  position: absolute;
+  top: 60%;
+  left: 38%;
+  transform: translateY(0px);
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: 300;
+  animation: float 5s ease-in-out infinite;
+}
+
+#bg{
+  max-width: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+.luz {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+    section p {
+      top: 62%;
+      left: 7%;
+    }
+
+    #bg {
+        display: none;
+    }
+
+    section h2{
+      top: 39%;
+      left: -2%;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+    section p {
+      top: 60%;
+      left: 21%;
+    }
+
+    #bg  {
+        display: none;
+    }
+
+    section h2{
+      top: 50%;
+      left: 19%;
+    }
+}
+
+@keyframes float{
+  0%{
+    transform: translateY(0px);
+  }
+
+  50%{
+    transform: translateY(-20px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
+}

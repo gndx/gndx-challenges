@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 NOT FOUND </title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <section class="container">
+        <h2>404 NOT FOUND</h2>
+        <p>The request URL was not found on this server.</p>
+        <div class="luz"></div>
+        <img src="img/background.jpg" id="bg">
+    </section>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        console.log("alert");
+        $(document).mousemove(function (e) {
+            var X = e.pageX;
+            var Y = e.pageY;
+            $(".luz").css("background", "radial-gradient(circle at " + X + "px " + Y + "px, transparent, #000 30%)");
+        });
+    </script>
+</body>
+
+</html>
