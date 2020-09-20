@@ -6,8 +6,8 @@ import TextField from 'material-ui/TextField';
 import Facebook from './components/facebook';
 
 class Register extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             email: '',
             password: '',

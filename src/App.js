@@ -8,9 +8,26 @@ import NotFound from './components/NotFound';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import { RaisedButton, Toolbar } from 'material-ui';
-import Button from '@material-ui/core/Button';
 
 class App extends Component {
+
+  home = () => <h1>Home</h1>
+
+  login = () => <Login />
+
+  register = () => <Register onRegister={this.handleUser} />
+
+  notFound = ({ location }) => <NotFound />
+
+  handleUser = (user) => {
+    this.setState({
+      isLogged: user[0],
+      email: user[1],
+      name: user[2],
+      picture: user[3]
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -30,22 +47,15 @@ class App extends Component {
             </div>
           </MuiThemeProvider>
           <Switch>
-            <Route exact path="/" component={home} />
-            <Route path="/login" component={login} />
-            <Route path="/register" component={register} />
-            <Route component={notFound} />
+            <Route exact path="/" component={this.home} />
+            <Route path="/login" component={this.login} />
+            <Route path="/register" component={this.register} />
+            <Route component={this.notFound} />
           </Switch>
         </Router>
       </div>
     );
   }
 }
-const home = () => <h1>Home</h1>
-
-const login = () => <Login />
-
-const register = () => <Register />
-
-const notFound = ({ location }) => <NotFound />
 
 export default App;
