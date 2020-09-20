@@ -42,7 +42,7 @@ class Facebook extends React.Component {
         } else {
             fbContent = (<FacebookLogin
                 appId={process.env.REACT_APP_FACEBOOK_TOKEN}
-                autoLoad={true}
+                autoLoad={false}
                 textButton="    Sign In With Facebook"
                 icon={<ImFacebook />}
                 fields="name,email,picture"

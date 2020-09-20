@@ -21,7 +21,6 @@ class App extends Component {
                 title="Tejiendo AMOR 💞"
                 position="static"
                 showMenuIconButton={false}
-                onClick={() => window.location="/"}
               >
                 <Toolbar style={{ background: '#00BCD4', alignSelf: 'center' }}>
                   <RaisedButton label="login" primary={true} style={{ margin: 10 }} onClick={() => window.location = "/login"} />

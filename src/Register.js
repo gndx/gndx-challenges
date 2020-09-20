@@ -3,6 +3,7 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import Facebook from './components/facebook';
 
 class Register extends Component {
     constructor() {
@@ -21,10 +22,10 @@ class Register extends Component {
             if (this.state.password === this.state.password2) {
                 //if(this.state.email.exist)
                 //{
-                    //error
+                //error
                 //}else
                 //{
-                    //regiser
+                //regiser
                 //}
             }
         }
@@ -55,9 +56,10 @@ class Register extends Component {
                         onChange={(event, newValue) => this.setState({ password2: newValue })}
                     />
                     <br />
-                    <RaisedButton label="Sigin" primary={true} style={{margin: 15}} onClick={(event) => this.handleClick(event)} />
+                    <RaisedButton label="Sigin" primary={true} style={{ margin: 15 }} onClick={(event) => this.handleClick(event)} />
                 </div>
             </MuiThemeProvider>
+            <Facebook />
         </div>);
     }
 }
