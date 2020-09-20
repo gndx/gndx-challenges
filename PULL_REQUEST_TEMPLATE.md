@@ -1,16 +1,16 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
+- Name: Claudio Mldo
+- GitHub: https://github.com/MClaudio
 - Twitter:
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/MClaudio/Weather-App
 
 ## challenge:
   - [ ] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
-  - [ ] Weather app
+  - [X] Weather app
   - [ ] Github Jobs
   - [ ] IP Address Tracker
   - [ ] Authentication App
