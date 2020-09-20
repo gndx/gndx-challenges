@@ -1,8 +1,6 @@
-import { Component } from "react"
-
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
-import { render } from "@testing-library/react";
+import { ImFacebook } from 'react-icons/im';
 
 class Facebook extends React.Component {
     state = {
@@ -36,13 +34,17 @@ class Facebook extends React.Component {
                 }}>
                     <img src={this.state.picture} alt={this.state.name} />
                     <h2>Welcome Back {this.state.name}</h2>
-                    {this.state.email}
+                    {
+                    //window.location="/404.js"
+                }
                 </div>
             );
         } else {
             fbContent = (<FacebookLogin
                 appId={process.env.REACT_APP_FACEBOOK_TOKEN}
                 autoLoad={true}
+                textButton="    Sign In With Facebook"
+                icon={<ImFacebook />}
                 fields="name,email,picture"
                 onClick={this.componentClicked}
                 callback={this.responseFacebook}

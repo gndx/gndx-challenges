@@ -1,5 +1,5 @@
 {
-  "name": "freelancer2.0",
+  "name": "Tejiendo AMOR",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +8,8 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,6 +24,7 @@
     "production": [
       ">0.2%",
       "not dead",
+      "not ie <= 11",
       "not op_mini all"
     ],
     "development": [
@@ -32,6 +34,9 @@
     ]
   },
   "devDependencies": {
-    "react-facebook-login": "^4.1.1"
+    "material-ui": "^0.20.2",
+    "react-facebook-login": "^4.1.1",
+    "react-icons": "^3.11.0",
+    "react-router-dom": "^5.2.0"
   }
 }
