@@ -5,28 +5,37 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Login from './Login';
 import Register from './Register';
 import NotFound from './components/NotFound';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import { RaisedButton, Toolbar } from 'material-ui';
+import Button from '@material-ui/core/Button';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Router>
-          <div>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/login">Login</Link></li>
-              <li><Link to="/register">Register</Link></li>
-            </ul>
-
-            <hr />
-
-            <Switch>
-              <Route exact path="/" component={home} />
-              <Route path="/login" component={login} />
-              <Route path="/register" component={register} />
-              <Route component={notFound} />
-            </Switch>
-          </div>
+          <MuiThemeProvider>
+            <div>
+              <AppBar
+                title="Tejiendo AMOR 💞"
+                position="static"
+                showMenuIconButton={false}
+                onClick={() => window.location="/"}
+              >
+                <Toolbar style={{ background: '#00BCD4', alignSelf: 'center' }}>
+                  <RaisedButton label="login" primary={true} style={{ margin: 10 }} onClick={() => window.location = "/login"} />
+                  <RaisedButton label="sigin" primary={true} style={{ margin: 10 }} onClick={() => window.location = "/register"} />
+                </Toolbar>
+              </AppBar>
+            </div>
+          </MuiThemeProvider>
+          <Switch>
+            <Route exact path="/" component={home} />
+            <Route path="/login" component={login} />
+            <Route path="/register" component={register} />
+            <Route component={notFound} />
+          </Switch>
         </Router>
       </div>
     );

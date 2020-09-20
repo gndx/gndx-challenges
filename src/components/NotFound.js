@@ -1,9 +1,14 @@
 import React from 'react'
+import logo from '../assets/404.gif'
 
 const NotFound = () =>
-  <div>
-    <h3>404 page not found</h3>
-    <p>We are sorry but the page you are looking for does not exist.</p>
+  <div style={{
+    padding: 50,
+    height: '100vh',
+    background: '#aff1e4'
+  }}>
+    <img src={logo} style={{ width: 600, padding: 10 }} alt="404" />
+    <h1>Don't worry, this isn't what you were looking for, is it?</h1>
   </div>
 
 export default NotFound

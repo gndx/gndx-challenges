@@ -2,7 +2,6 @@ import { Component } from 'react';
 import React from 'react';
 import Facebook from './components/facebook';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
@@ -17,13 +16,9 @@ class Login extends Component {
 
     render() {
         return (
-            <div id="loginForms">
+            <div>
                 <MuiThemeProvider>
                     <div>
-                        <AppBar
-                            title="Tejiendo AMOR 💞"
-                            showMenuIconButton={false}
-                        />
                         <br />
                         <br />
                         <TextField
