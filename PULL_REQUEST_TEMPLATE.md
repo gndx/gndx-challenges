@@ -1,13 +1,13 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: Jean Pool Zambrano Hernandez
+- GitHub: JeanPool22
+- Twitter: JeanPoolZH
+- Twitch: jeanpoolzh
+- Repositorio: gndx-challenges
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [x] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
