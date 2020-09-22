@@ -28,6 +28,7 @@ const PaypalButton = (order) => {
                         total: order.total,
                         currency: paypalConf.currency
                     },
+                    
                     descripcion: 'Gracias por la compra',
                     custom: order.customer || '',
                     item_list: {

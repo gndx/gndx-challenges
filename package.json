@@ -34,8 +34,10 @@
     ]
   },
   "devDependencies": {
+    "firebase": "^7.21.0",
     "material-ui": "^0.20.2",
     "paypal-checkout": "^4.0.317",
+    "react-cookie": "^4.0.3",
     "react-facebook-login": "^4.1.1",
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0"

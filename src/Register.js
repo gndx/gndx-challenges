@@ -20,20 +20,29 @@ class Register extends Component {
             console.log('ERROR: Ingrese todos los campos');
         } else {
             if (this.state.password === this.state.password2) {
-                let registered = this.props.onRegister([
+                let exist = this.props.onRegister([
                     this.state.email,
                     this.state.password,
-                    ''
-                ], true);
+                    '',
+                    'register'
+                ]);
 
-                if(registered)
-                {
+                if (!exist) {
                     console.log('Registrado correctamente');
-                }else
-                {
+                } else {
                     console.log('El email ', this.state.email, ' ya existe.');
                 }
             }
+        }
+    }
+
+    handleUser = (user) => {
+        let exist = this.props.onRegister(user);
+        if(exist)
+        {
+            alert("Logged");
+        }else
+        {
         }
     }
 
@@ -65,7 +74,7 @@ class Register extends Component {
                     <RaisedButton label="Sigin" primary={true} style={{ margin: 15 }} onClick={() => this.register()} />
                 </div>
             </MuiThemeProvider>
-            <Facebook />
+            <Facebook onRegister={this.handleUser} />
         </div>);
     }
 }
