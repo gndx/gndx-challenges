@@ -3,7 +3,7 @@
 - Name: Rulo Vargas
 - GitHub: https://github.com/deoraczo 
 - Twitter: https://twitter.com/deoraczo
-- Twitch: 
+- Twitch: N/A
 - Repositorio: https://github.com/deoraczo/image-uploader-client
 
 ## challenge:
