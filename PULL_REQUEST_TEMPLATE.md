@@ -1,15 +1,15 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: Rulo Vargas
+- GitHub: https://github.com/deoraczo 
+- Twitter: https://twitter.com/deoraczo
+- Twitch: 
+- Repositorio: https://github.com/deoraczo/image-uploader-client
 
 ## challenge:
   - [ ] 404 Not fount
   - [ ] Social media dashboard
-  - [ ] Image Uploader
+  - [x] Image Uploader
   - [ ] Weather app
   - [ ] Github Jobs
   - [ ] IP Address Tracker
