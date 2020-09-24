@@ -2,14 +2,14 @@
 
 - Name: Rulo Vargas
 - GitHub: https://github.com/deoraczo 
-- Twitter: 
-- Twitch:
-- Repositorio: https://github.com/deoraczo/notfound-page
+- Twitter: https://twitter.com/deoraczo
+- Twitch: 
+- Repositorio: https://github.com/deoraczo/image-uploader-client
 
 ## challenge:
-  - [x] 404 Not fount
+  - [ ] 404 Not fount
   - [ ] Social media dashboard
-  - [ ] Image Uploader
+  - [x] Image Uploader
   - [ ] Weather app
   - [ ] Github Jobs
   - [ ] IP Address Tracker
