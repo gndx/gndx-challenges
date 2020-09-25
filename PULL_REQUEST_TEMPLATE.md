@@ -1,10 +1,10 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: ronny capriles
+- GitHub: https://github.com/ronnyCapriles
+- Twitter: i haven't twitter
+- Twitch: i haven't twitch
+- Repositorio:https://github.com/ronnyCapriles/ChatApp-LoL
 
 ## challenge:
   - [ ] 404 Not fount
@@ -15,5 +15,5 @@
   - [ ] IP Address Tracker
   - [ ] Authentication App
   - [ ] Pricing component
-  - [ ] Chat Group
+  - [x] Chat Group
   - [ ] Trello Clone
