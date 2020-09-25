@@ -12,7 +12,7 @@
   - [ ] Image Uploader
   - [ ] Weather app
   - [ ] Github Jobs
-  - [.]:laughing: IP Address Tracker
+  - [.] :laughing: IP Address Tracker
   - [ ] Authentication App
   - [ ] Pricing component
   - [ ] Chat Group
