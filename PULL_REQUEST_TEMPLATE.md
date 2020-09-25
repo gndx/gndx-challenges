@@ -1,13 +1,13 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: Diego Luna López
+- GitHub: Diego-Luna
+- Twitter: Diego-Luna
+- Twitch: ----
+- Repositorio: https://github.com/Diego-Luna/pages-404
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [ ✔️ ] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
