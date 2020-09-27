@@ -1,10 +1,10 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name:Roger Colquehuanca Calcina
+- GitHub: https://github.com/rogergcc
+- Twitter: https://twitter.com/gccroger
+- Twitch: https://www.twitch.tv/rcmoviedev
+- Repositorio: https://github.com/rogergcc/ip-address-tracker
 
 ## challenge:
   - [ ] 404 Not fount
@@ -12,7 +12,7 @@
   - [ ] Image Uploader
   - [ ] Weather app
   - [ ] Github Jobs
-  - [ ] IP Address Tracker
+  - [X] IP Address Tracker
   - [ ] Authentication App
   - [ ] Pricing component
   - [ ] Chat Group
