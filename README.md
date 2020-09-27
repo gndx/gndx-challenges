@@ -7,7 +7,7 @@
 - Repositorio:
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [x] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
