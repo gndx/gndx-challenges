@@ -1,10 +1,10 @@
 ## [gndx@stream]:~$ gndx challenges
 
 - Name:
-- GitHub
-- Twitter:
+- GitHub https://github.com/fcarrizalest
+- Twitter: https://twitter.com/Fcarrizalest
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/fcarrizalest/flavucros
 
 ## challenge:
   - [ ] 404 Not fount
@@ -15,5 +15,5 @@
   - [ ] IP Address Tracker
   - [ ] Authentication App
   - [ ] Pricing component
-  - [ ] Chat Group
+  - [x] Chat Group
   - [ ] Trello Clone
