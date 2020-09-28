@@ -1,37 +1,31 @@
 # gndx-challenges
-10 Retos para desarrolladores Web
+ * Name: Santiago Botero
+ * GitHub: https://github.com/sanbope/
+ * Repositorio: https://github.com/sanbope/gndx-challenges
 
-### Envia tu reto:
+Pagina web de "ventas" inspirado en el negocio de mi novia, tiene incluidos los siguientes retos:
+## challenges:
 
-1. Realiza un **Fork** de este repositorio.
-2. Desarrolla tu reto a eleccion:
+ - [404 Not Found](https://devchallenges.io/challenges/wBunSb7FPrIepJZAg0sY) ✔️ 100%
+ - [Authentication App](https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw) ✔️ 30%
+ - [Pricing Component](https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC) ✔️ 99%
 
- - [404 Not Found](https://devchallenges.io/challenges/wBunSb7FPrIepJZAg0sY)
- - [Social media dashboard](https://www.frontendmentor.io/solutions/social-media-dashboard-gXxCRA95_)
- - [Image Uploader](https://devchallenges.io/challenges/O2iGT9yBd6xZBrOcVirx)
- - [Weather App](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv)
- - [Github Jobs](https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps)
- - [IP Address Tracker](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0)
- - [Authentication App](https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw)
- - [Pricing Component](https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC)
- - [Chat Group](https://devchallenges.io/challenges/UgCqszKR7Q7oqb4kRfI0)
- - [Trello Clone](https://devchallenges.io/challenges/wP0LbGgEeKhpFHUpPpDh)
+## Construido con 🛠️
 
-3. ¿Terminaste? Crea un *Pull request*, no olvides llenar el [formato del Pull Request](./PULL_REQUEST_TEMPLATE.md).
-4. Espera la revision.
+* [Visual Studio Code](https://code.visualstudio.com) - IDE
+* [ReactJs](https://es.reactjs.org)
 
-### Comunidad en Discord
-Tiendes dudas, comentarios o quieres aportar entra a discord: [https://discord.gg/brutEYf](https://discord.gg/brutEYf)
+## Dependencias:
 
-### LIVE
+* [firebase](https://www.npmjs.com/package/firebase)
+* [material-ui](https://www.npmjs.com/package/material-ui)
+* [paypal-checkout](https://www.npmjs.com/package/paypal-checkout)
+* [universal-cookie](https://www.npmjs.com/package/universal-cookie)
+* [react-facebook-login](https://www.npmjs.com/package/react-facebook-login)
+* [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
-Proximamente, tendremos un LIVE para revisar los mejores retos. (Una vez por mes).
+### Token visible
 
-### Premios
-
-eBooks / Pack de Stickers
-
-### Participantes:
-
-1. @gndx
-2. 
+### Experiencia
+Comparto un poco de mis logros y frustraciones.
+Aprendí bastantes cosas, este proyecto estaba avanzado pero fue destruido y hecho desde 0 porque estaba apenas asimilando las cosas, al rehacerlo se me hizo mas facil y pude ordenarlo un poco mejor. vengo de programar en escritorio con java, así que algunas cosas de react aun no logro comprender, como el hecho de que las funciones no se ejecutan asincronicamente, y cuando las declaro con "async" ya dejan de funcionar. Me falta mucho, pero menos que cuando inicie el reto.
