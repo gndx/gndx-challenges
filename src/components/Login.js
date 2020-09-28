@@ -1,17 +1,43 @@
 import { Component } from 'react';
 import React from 'react';
-import Facebook from './components/facebook';
+import Facebook from './Facebook';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import { findUser, loadUser, saveUser } from '../model/FirebaseConnection';
+import { saveCookie } from '../model/Cookies'
 
 class Login extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             email: '',
             password: ''
         }
+    }
+
+    login = () => {
+        let loadedUser = findUser(this.state.email);
+
+        if (loadedUser !== undefined) {
+            this.handleLogin(loadedUser);
+        } else {
+            //alert("Este usuario no existe");
+        }
+        alert("Please login with facebook account.") //No supe manejar la forma no asincrona de react
+    }
+
+    loginFacebook = (user) => {
+        if (loadUser(user.id) === undefined) {
+            saveUser(user);
+        }
+        this.handleLogin(user);
+    }
+
+    handleLogin = (user) => {
+        saveCookie("id", user.id);
+        saveCookie("email", user.email);
+        window.location = '/';
     }
 
     render() {
@@ -34,11 +60,11 @@ class Login extends Component {
                             onChange={(event, newValue) => this.setState({ password: newValue })}
                         />
                         <br />
-                        <RaisedButton label="login" primary={true} style={{margin: 15}} onClick={(event) => this.handleClick(event)} />
+                        <RaisedButton label="login" primary={true} style={{ margin: 15 }} onClick={() => this.login()} />
                         <br />
                     </div>
                 </MuiThemeProvider>
-                <Facebook />
+                <Facebook text="login with facebook" handleUser={this.loginFacebook} />
             </div>
         );
     }

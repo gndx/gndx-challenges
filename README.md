@@ -3,12 +3,11 @@
  * GitHub: https://github.com/sanbope/
  * Repositorio: https://github.com/sanbope/gndx-challenges
 
-### challenge:
+### challenges:
 
- - [404 Not Found](https://devchallenges.io/challenges/wBunSb7FPrIepJZAg0sY)
- - [Github Jobs](https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps)
- - [Authentication App](https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw) ✔️
- - [Pricing Component](https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC)
+ - [404 Not Found](https://devchallenges.io/challenges/wBunSb7FPrIepJZAg0sY) ✔️ 100%
+ - [Authentication App](https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw) ✔️ 30%
+ - [Pricing Component](https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC) ✔️ 99%
 
 ## Construido con 🛠️
 
@@ -17,16 +16,14 @@
 
 ## Dependencias:
 
-* [firebase]()
-* [material-ui]()
-* [paypal-checkout]()
-* [react-cookie]()
-* [react-facebook-login]()
-* [react-icons]()
-* [react-router-dom]()
-* [react-cookie](https://www.npmjs.com/package/react-cookie)
+* [firebase](https://www.npmjs.com/package/firebase)
+* [material-ui](https://www.npmjs.com/package/material-ui)
+* [paypal-checkout](https://www.npmjs.com/package/paypal-checkout)
+* [universal-cookie](https://www.npmjs.com/package/universal-cookie)
+* [react-facebook-login](https://www.npmjs.com/package/react-facebook-login)
+* [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
 ### token:
-We have to set a facebook token with this windows command:
-set "REACT_APP_FACEBOOK_TOKEN=token"
-(this is for login button)
+Visible
+
+### 

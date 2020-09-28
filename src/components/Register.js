@@ -3,7 +3,10 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import Facebook from './components/facebook';
+import Facebook from './Facebook';
+import { saveUser, loadUser, findUser } from '../model/FirebaseConnection';
+import { saveCookie } from '../model/Cookies'
+import User from '../model/User';
 
 class Register extends Component {
     constructor(props) {
@@ -15,34 +18,53 @@ class Register extends Component {
         }
     }
 
-    register = () => {
+    getId = () => //no supe manejar al forma no asincrona del react, por lo que me retorna 1 antes de comparar si existe el usuario
+    {
+        let i = 1;
+        do {
+            if (loadUser(i) === undefined) {
+                return i;
+            }
+            i++;
+        } while (true);
+    }
+
+    register = () => { //Funciona
         if (this.state.email === '' || this.state.password === '') {
-            console.log('ERROR: Ingrese todos los campos');
+            alert('ERROR: Complete the data');
         } else {
             if (this.state.password === this.state.password2) {
-                let exist = this.props.onRegister([
-                    this.state.email,
-                    this.state.password,
-                    '',
-                    'register'
-                ]);
-
-                if (!exist) {
-                    console.log('Registrado correctamente');
-                } else {
-                    console.log('El email ', this.state.email, ' ya existe.');
-                }
+                this.handleRegister(new User({
+                    id: this.getId(),
+                    email: this.state.email,
+                    password: this.state.password,
+                    withFacebook: false,
+                    image: ''
+                }));
+            } else {
+                alert("Different passwords");
             }
         }
     }
 
-    handleUser = (user) => {
-        let exist = this.props.onRegister(user);
-        if(exist)
-        {
-            alert("Logged");
-        }else
-        {
+    registerFacebook = (user) => {
+        this.handleRegister(user);
+    }
+
+    handleRegister = (user) => {
+        if (findUser(user.email) === undefined) {
+            saveUser(new User({
+                id: user.id,
+                email: user.email,
+                password: user.password,
+                image: user.image,
+                withFacebook: user.withFacebook ? true : false
+            }));
+            saveCookie("id", user.id);
+            saveCookie("email", user.email);
+            window.location = '/';
+        } else {
+            alert(user.email + " already exist.")
         }
     }
 
@@ -71,10 +93,10 @@ class Register extends Component {
                         onChange={(event, newValue) => this.setState({ password2: newValue })}
                     />
                     <br />
-                    <RaisedButton label="Sigin" primary={true} style={{ margin: 15 }} onClick={() => this.register()} />
+                    <RaisedButton label="Sig in" primary={true} style={{ margin: 15 }} onClick={() => this.register()} />
                 </div>
             </MuiThemeProvider>
-            <Facebook onRegister={this.handleUser} />
+            <Facebook text="sign in with facebook" handleUser={this.handleRegister} />
         </div>);
     }
 }
