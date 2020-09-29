@@ -1,10 +1,11 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: **AlexGarrixen**
+- GitHub: [AlexGarrixen](https://github.com/AlexGarrixen)
+- Twitter: @AlexTexis10
+- Twitch: none
+- RepositorioFronted: [https://github.com/AlexGarrixen/TrelloClone](https://github.com/AlexGarrixen/TrelloClone)
+- RepositorioBackend: [https://github.com/AlexGarrixen/TrelloServer](https://github.com/AlexGarrixen/TrelloServer)
 
 ## challenge:
   - [ ] 404 Not fount
@@ -16,4 +17,4 @@
   - [ ] Authentication App
   - [ ] Pricing component
   - [ ] Chat Group
-  - [ ] Trello Clone
+  - [x] Trello Clone
