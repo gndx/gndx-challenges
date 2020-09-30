@@ -34,4 +34,4 @@ eBooks / Pack de Stickers
 ### Participantes:
 
 1. @gndx
-2. 
+2. Daniel Aranda Martín
