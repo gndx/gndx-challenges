@@ -1,10 +1,10 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: Daniel Aranda Martín
+- GitHub: https://github.com/DanielArandaMar
+- Twitter: none
+- Twitch: none
+- Repositorio: https://github.com/DanielArandaMar/ChatGrupal
 
 ## challenge:
   - [ ] 404 Not fount
@@ -15,5 +15,5 @@
   - [ ] IP Address Tracker
   - [ ] Authentication App
   - [ ] Pricing component
-  - [ ] Chat Group
+  - [X] Chat Group
   - [ ] Trello Clone
