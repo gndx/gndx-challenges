@@ -1,13 +1,14 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
+- Name: Angel López
+- GitHub: https://github.com/AngelLopez15
+- Twitter: https://twitter.com/AO_lopez
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/AngelLopez15/Error404
+- Deploy: https://error404-git-master.angellopez15.vercel.app/
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [x] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
