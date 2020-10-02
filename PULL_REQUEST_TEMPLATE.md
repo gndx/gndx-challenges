@@ -1,10 +1,10 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
+- Name: Carlos Yucra
+- GitHub: https://github.com/bcarlog
+- Twitter: https://twitter.com/bcarlog
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/bcarlog/trullo
 
 ## challenge:
   - [ ] 404 Not fount
@@ -16,4 +16,4 @@
   - [ ] Authentication App
   - [ ] Pricing component
   - [ ] Chat Group
-  - [ ] Trello Clone
+  - [x] Trello Clone
