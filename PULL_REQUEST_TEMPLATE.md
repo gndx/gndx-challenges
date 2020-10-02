@@ -1,10 +1,10 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
+- Name: Fernando Quinteros Gutierrez
+- GitHub: https://github.com/devferx
+- Twitter: https://twitter.com/devferx
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/devferx/pricing-component-with-toggle
 
 ## challenge:
   - [ ] 404 Not fount
@@ -14,6 +14,6 @@
   - [ ] Github Jobs
   - [ ] IP Address Tracker
   - [ ] Authentication App
-  - [ ] Pricing component
+  - [X] Pricing component
   - [ ] Chat Group
   - [ ] Trello Clone
