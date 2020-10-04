@@ -7,7 +7,7 @@
 - Repositorio: https://github.com/DG-Develop/404-not-found-challenge
 
 ## challenge:
-  - [ X ] 404 Not fount
+  - [x] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
