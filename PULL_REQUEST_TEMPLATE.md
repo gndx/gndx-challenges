@@ -4,11 +4,11 @@
 - GitHub: https://github.com/DG-Develop
 - Twitter: https://twitter.com/DGDevelop
 - Twitch:
-- Repositorio: https://github.com/DG-Develop/404-not-found-challenge
+- Repositorio: https://github.com/DG-Develop/Social-Media-Dashboard
 
 ## challenge:
-  - [x] 404 Not fount
-  - [ ] Social media dashboard
+  - [ ] 404 Not fount
+  - [x] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
   - [ ] Github Jobs
