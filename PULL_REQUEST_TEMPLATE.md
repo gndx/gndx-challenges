@@ -1,13 +1,13 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
+- Name: David Antonio Gómez Pacheco
+- GitHub: https://github.com/DG-Develop
+- Twitter: https://twitter.com/DGDevelop
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/DG-Develop/404-not-found-challenge
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [ X ] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
