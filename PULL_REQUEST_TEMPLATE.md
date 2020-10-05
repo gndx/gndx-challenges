@@ -1,10 +1,12 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
+- Name: Juan Díaz Ortega (EntwistleOx)
+- GitHub: https://github.com/EntwistleOx
+- Twitter: https://twitter.com/EntwistleOx
 - Twitch:
-- Repositorio:
+- Repositorio: 
+     * https://github.com/EntwistleOx/ip-address-tracker
+     * https://github.com/EntwistleOx/authentication-app
 
 ## challenge:
   - [ ] 404 Not fount
@@ -12,8 +14,8 @@
   - [ ] Image Uploader
   - [ ] Weather app
   - [ ] Github Jobs
-  - [ ] IP Address Tracker
-  - [ ] Authentication App
+  - [X] IP Address Tracker
+  - [X] Authentication App
   - [ ] Pricing component
   - [ ] Chat Group
   - [ ] Trello Clone
