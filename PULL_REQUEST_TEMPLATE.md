@@ -5,8 +5,8 @@
 - Twitter: https://twitter.com/EntwistleOx
 - Twitch:
 - Repositorio: 
-https://github.com/EntwistleOx/ip-address-tracker
-https://github.com/EntwistleOx/authentication-app
+     * https://github.com/EntwistleOx/ip-address-tracker
+     * https://github.com/EntwistleOx/authentication-app
 
 ## challenge:
   - [ ] 404 Not fount
