@@ -1,0 +1,21 @@
+header {
+  padding: 40px 77px;
+  height: 15vh;
+}
+
+header > h1 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  font-style: normal;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 280px) {
+  header {
+    padding: 15px 30px;
+    height: 10vh;
+  }
+}

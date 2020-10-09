@@ -1,0 +1,25 @@
+footer {
+  margin-top: auto;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+footer > p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333333;
+  margin: 39px;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 280px) {
+  footer {
+    height: 15vh;
+  }
+
+  footer > p {
+    text-align: center;
+  }
+}
