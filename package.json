@@ -1,0 +1,44 @@
+{
+  "name": "404_not_found",
+  "version": "1.0.0",
+  "description": "Desafio para crear un 404 page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grover101/gndx-challenges.git"
+  },
+  "keywords": [],
+  "author": "Grover Limachi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grover101/gndx-challenges/issues"
+  },
+  "homepage": "https://devchallenges.io/challenges/wBunSb7FPrIepJZAg0sY",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "css-loader": "^4.3.0",
+    "favicons-webpack-plugin": "^4.2.0",
+    "file-loader": "^6.1.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.12.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
