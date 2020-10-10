@@ -6,20 +6,20 @@
 - Twitch: none
 - Repositorio: {
 
-    frontend: https://github.com/rogeliosamuel621/Image-Uploader,
+    frontend: https://github.com/rogeliosamuel621/AuthApp
     
-    backend: https://github.com/rogeliosamuel621/Image-Uploader-API
+    backend: https://github.com/rogeliosamuel621/Authentication-App-API
     
 }
 
 ## challenge:
   - [ ] 404 Not fount
   - [ ] Social media dashboard
-  - [x] Image Uploader
+  - [ ] Image Uploader
   - [ ] Weather app
   - [ ] Github Jobs
   - [ ] IP Address Tracker
-  - [ ] Authentication App
+  - [x] Authentication App
   - [ ] Pricing component
   - [ ] Chat Group
   - [ ] Trello Clone
