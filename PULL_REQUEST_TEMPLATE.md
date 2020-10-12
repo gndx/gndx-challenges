@@ -1,13 +1,14 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
+- Name: Brayan Barroso
+- GitHub: https://github.com/brayanbarroso/
+- Twitter: @brian9282
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/brayanbarroso/404-not-found
+-Link: https://page-404-notfound.netlify.app
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [X] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
