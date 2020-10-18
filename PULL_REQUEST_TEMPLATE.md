@@ -1,16 +1,16 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
+- Name: Oscar Monroy
+- GitHub: https://github.com/OzkrMonroy
 - Twitter:
 - Twitch:
-- Repositorio:
+- Repositorio: https://github.com/OzkrMonroy/weather-app-challenge
 
 ## challenge:
   - [ ] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
-  - [ ] Weather app
+  - [X] Weather app
   - [ ] Github Jobs
   - [ ] IP Address Tracker
   - [ ] Authentication App
