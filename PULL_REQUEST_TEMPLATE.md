@@ -2,7 +2,7 @@
 
 - Name: Oscar Monroy
 - GitHub: https://github.com/OzkrMonroy
-- Twitter:
+- Twitter: @FenixOzm
 - Twitch:
 - Repositorio: https://github.com/OzkrMonroy/weather-app-challenge
 
