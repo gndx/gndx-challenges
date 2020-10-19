@@ -1,13 +1,12 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
-
+- Name: Andrés Parra Garzón
+- GitHub: [https://github.com/AndresParraGO/](https://github.com/AndresParraGO/)
+- Twitter: [https://twitter.com/AndresParraGar4](https://twitter.com/AndresParraGar4)
+- Repositorio: [https://github.com/AndresParraGO/404-page](https://github.com/AndresParraGO/404-page)
+ 
 ## challenge:
-  - [ ] 404 Not fount
+  - [x] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
