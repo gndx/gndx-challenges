@@ -18,6 +18,9 @@
 .env.test.local
 .env.production.local
 
+# ignore batch scripts
+*.bat
+
 /design
 
 npm-debug.log*
