@@ -12,10 +12,14 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm-run-all --parallel watch-css start-js",
+    "build": "npm-run-all build-css build-js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch-css": "npm run build-css && stylus -c -w src/static/stylus/ --out src/static/css/",
+    "build-css": "stylus -c src/static/stylus/ --out src/static/css/",
+    "start-js": "react-scripts start",
+    "build-js": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "stylus": "^0.54.8"
   }
 }
