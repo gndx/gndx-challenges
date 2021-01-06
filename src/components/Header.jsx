@@ -1,26 +1,38 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import '../static/css/header.css'
 import { geoIpifyAPIKey, geoIpifyAPIUrl } from '../utils/credentials.js';
+import { urlProtocolRegex, urlRegex, ipRegex } from '../utils/regex-weburl.js';
 
 const Header = () => {
     const [address, changeAddress] = useState('');
 
     const getGeoData = (ip) => {
         console.log(`IP: ${ip}`)
-        let rawData = '';
         let http = require('http');
         http.get(`${geoIpifyAPIUrl}apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`, res => {
+            let rawData = '';
             res.on('data', chunk => rawData += chunk);
             res.on('end', () => {
-                console.log(rawData);
+                console.log(JSON.parse(rawData));
             });
         }).end();
-        return rawData;
+    }
+
+    const validateInput = () => {
+        let ip;
+        if(urlRegex.test(address)) { // Is url
+            // TODO: Resolve address
+        }else if(ipRegex.test(address)) // Is IP. 
+            // Remove protocol from IP if neccessary
+            ip = address.replace(urlProtocolRegex, '');            
+        return ip;
     }
 
     const handleSearch = e => {
-        let ip = isIP() ? address : getIP();
-        getGeoData(ip);
+        let ip = validateInput();
+        if(ip)
+            getGeoData(ip);
         
         changeAddress('');
         e.preventDefault();
