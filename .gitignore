@@ -25,10 +25,7 @@
 /design
 
 # prevent personal credentials from being made public
-/src/utils/credentials.js 
-
-# ignore vscode stuff
-.eslintcache
+# /src/utils/credentials.js 
 
 npm-debug.log*
 yarn-debug.log*
