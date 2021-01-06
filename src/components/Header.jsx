@@ -8,7 +8,7 @@ const Header = () => {
     const getIP = () => {
         let ip;
         const dns = require('dns');
-        dns.resolve4('https://' + address, (err, addresses) => {
+        dns.resolve4(address, (err, addresses) => {
             if(err){
                 console.log(err);
                 return;
@@ -25,6 +25,7 @@ const Header = () => {
         e.stopPropagation();
         
         let ip = getIP(); 
+        console.log(ip);
         if(ip){
             let http = require('http');
             http.get(`${geoIpifyAPIUrl}apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`, res => {
