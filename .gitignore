@@ -21,7 +21,11 @@
 # ignore batch scripts
 *.bat
 
+# ignore desired desing/UI images
 /design
+
+# prevent personal credentials from being made public
+/src/utils/credentials.js 
 
 npm-debug.log*
 yarn-debug.log*
