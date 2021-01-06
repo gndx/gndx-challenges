@@ -5,21 +5,6 @@ import { geoIpifyAPIKey, geoIpifyAPIUrl } from '../utils/credentials.js';
 const Header = () => {
     const [address, changeAddress] = useState('');
 
-    const getIP = () => {
-        let ip;
-        const dns = require('dns');
-        dns.resolve4(address, (err, addresses) => {
-            if(err){
-                console.log(err);
-                return;
-            }
-
-            ip = (typeof addresses === 'string' || addresses instanceof String) ?
-                addresses : addresses[0];
-        });
-        return ip;
-    }
-
     const getGeoData = (ip) => {
         console.log(`IP: ${ip}`)
         let rawData = '';
