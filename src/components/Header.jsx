@@ -1,57 +1,38 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import '../static/css/header.css'
 import { geoIpifyAPIKey, geoIpifyAPIUrl } from '../utils/credentials.js';
+import { urlProtocolRegex, urlRegex, ipRegex } from '../utils/regex-weburl.js';
 
 const Header = () => {
     const [address, changeAddress] = useState('');
 
-    const isIP = () => {
-        let fragments = address.split('.');
+    const getGeoData = (ip) => {
+        console.log(`IP: ${ip}`)
+        let http = require('http');
+        http.get(`${geoIpifyAPIUrl}apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`, res => {
+            let rawData = '';
+            res.on('data', chunk => rawData += chunk);
+            res.on('end', () => {
+                console.log(JSON.parse(rawData));
+            });
+        }).end();
+    }
 
-        // IP can only have 4 octets
-        if(fragments.length !== 4) 
-            return false;
-
-        for(let i = 0; i < fragments.length; i++){
-            let n = parseInt(fragments[i]);
-            //             not in IP octet range
-            if(isNaN(n) || !(n >= 0 && n < 256)) 
-                return false;
-        }
-        return true;
-    } 
-
-    const getIP = () => {
+    const validateInput = () => {
         let ip;
-        const dns = require('dns');
-        dns.resolve4(address, (err, addresses) => {
-            if(err){
-                console.log(err);
-                return;
-            }
-
-            ip = (typeof addresses === 'string' || addresses instanceof String) ?
-                addresses : addresses[0];
-        });
+        if(urlRegex.test(address)) { // Is url
+            // TODO: Resolve address
+        }else if(ipRegex.test(address)) // Is IP. 
+            // Remove protocol from IP if neccessary
+            ip = address.replace(urlProtocolRegex, '');            
         return ip;
     }
 
-    const getGeoData = (ip) => {
-        console.log(`IP: ${ip}`)
-        let rawData = '';
-        let http = require('http');
-        http.get(`${geoIpifyAPIUrl}apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`, res => {
-            res.on('data', chunk => rawData += chunk);
-            res.on('end', () => {
-                console.log(rawData);
-            });
-        }).end();
-        return rawData;
-    }
-
     const handleSearch = e => {
-        let ip = isIP() ? address : getIP();
-        getGeoData(ip);
+        let ip = validateInput();
+        if(ip)
+            getGeoData(ip);
         
         changeAddress('');
         e.preventDefault();
