@@ -4,7 +4,7 @@ veryDarkGray = hsl(0, 0%, 17%)
 .hero
     background-image: url('/src/static/images/pattern-bg.png')
     background-repeat: no-repeat
-    background-size: contain
+    background-size: cover
     justify-items: center
     height: 250px // Hardcoded height because image is static
     width: 100%
@@ -18,7 +18,9 @@ veryDarkGray = hsl(0, 0%, 17%)
         grid-column: 2
         grid-row: 2
         width: 75%
+        z-index: 1000
         div
+            min-height: 50px
             display: grid
             grid: 100% / 90% 1fr
             input[type=text]

@@ -9,7 +9,6 @@ const Header = () => {
     const [address, changeAddress] = useState('');
 
     const getGeoData = (ip) => {
-        console.log(`IP: ${ip}`)
         let http = require('http');
         http.get(`${geoIpifyAPIUrl}apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`, res => {
             let rawData = '';
