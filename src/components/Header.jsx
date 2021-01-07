@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../static/css/header.css'
 import { geoIpifyAPIKey, geoIpifyAPIUrl } from '../utils/credentials.js';
 import { urlProtocolRegex, urlRegex, ipRegex } from '../utils/regex-weburl.js';
+import addressService from '../utils/addressService.js';
 
 const Header = () => {
     const [address, changeAddress] = useState('');
@@ -13,9 +14,7 @@ const Header = () => {
         http.get(`${geoIpifyAPIUrl}apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`, res => {
             let rawData = '';
             res.on('data', chunk => rawData += chunk);
-            res.on('end', () => {
-                console.log(JSON.parse(rawData));
-            });
+            res.on('end', () => addressService.notify(JSON.parse(rawData)) );
         }).end();
     }
 
