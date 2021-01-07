@@ -5,11 +5,17 @@ import addressService from '../utils/addressService.js';
 
 class Map extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = { id: 'map' }
+        }
+
     // Map is defined here so that it can be destroyed on unmount
     map;
     
     componentDidMount() {
-        this.map = L.map('map').setView([51.505, -0.09], 13);
+        this.map = L.map(this.state.id).setView([51.505, -0.09], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
@@ -19,7 +25,7 @@ class Map extends Component {
             accessToken: mapboxAPIAccessToken
         }).addTo(this.map);
         
-        addressService.suscribe('map', mapData => {
+        addressService.suscribe(this.state.id, mapData => {
             let newPos = L.latLng(mapData.location.lat, mapData.location.lng);
             this.map.setView(newPos, this.map.getZoom());
         });
@@ -27,15 +33,15 @@ class Map extends Component {
     
     componentWillUnmount() {
         this.map.remove();
-        addressService.unsuscribe('map');
+        addressService.unsuscribe(this.state.id);
     }
 
     // TODO: make map containter height adjustable to screen size
     render() {
         return(
-            <div id="map" style={{height: '400px'}}></div>
+            <div id={this.state.id} style={{height: '400px'}}></div>
         );
     };
 }
 
-export default new Map();
+export default Map;
