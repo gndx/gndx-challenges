@@ -1,0 +1,28 @@
+.row
+    display: grid
+    grid: 1fr / 1fr 1fr 1fr 1fr
+    justify-items: center    
+    grid-column: 2
+    border-radius: 1em
+    box-shadow: 0px 2.5px 15px -5px rgba(0,0,0,0.75)
+    background-color: white
+    div
+        width: 100%
+        p
+            color: hsl(0, 0%, 59%)
+        h3
+            color: hsl(0, 0%, 17%)
+        p, h3
+            margin: 10px 20px
+
+.container
+    display: grid
+    grid: 1fr / 10% 80% 10%
+    position: absolute
+    z-index: 1000
+    transform: translate(0, -50%)
+    width: 100%
+    min-height: 75px
+
+.divider
+    border-right: .5px solid hsl(0, 0%, 59%)
