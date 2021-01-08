@@ -1,3 +1,4 @@
+@require('master.styl')
 .row
     display: grid
     grid: 1fr / 1fr 1fr 1fr 1fr
@@ -24,6 +25,25 @@
     transform: translate(0, -50%)
     width: 100%
     min-height: 75px
+    transition: 1s ease-in
+
+.collapse
+    height: 25%
+.collapse-item
+    display: none
 
 .divider
-    border-right: .5px solid hsl(0, 0%, 59%)
+    border-right: 1px solid hsl(0, 0%, 59%)
+
+@media only screen and (max-width: sm)
+    .row
+        grid: 1fr 1fr 1fr 1fr / 1fr
+        padding: 0
+        text-align: center
+        width: 100%
+    .divider 
+        border-right: none
+    .container
+        transform: none
+        grid: 1fr / 5% 90% 5%
+        top: 200px

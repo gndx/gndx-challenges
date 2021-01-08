@@ -19,11 +19,32 @@ class AddressBar extends Component {
         addressService.unsuscribe(this.state.id);
     }
 
+    handleClick = e => {
+        // Prevent toggle functionality from happening on desktop
+        // Taken from MDN:
+            // In summary, we recommend looking for the string
+            // “Mobi” anywhere in the User Agent to detect a mobile device.
+        if(!/Mobi/i.test(window.navigator.userAgent))
+            return; 
+
+        e.currentTarget.classList.toggle('collapse')
+        let first = true;
+        let children = e.currentTarget.children
+
+        for(let child of children){
+            if(first){
+                first = false;
+                continue;
+            }                
+            child.classList.toggle('collapse-item')
+        }
+    }
+
     render(){
         return(
             <section id={this.state.id}>
                 <div className="container">
-                    <div className="row">
+                    <div className="row" onClick={this.handleClick}>
                         <div className="divider">
                             <p>IP ADDRESS</p>
                             {
@@ -38,7 +59,7 @@ class AddressBar extends Component {
                                 this.state.address.location &&
                                 <h3>
                                     {`${this.state.address.location.city}, `}
-                                    {`${this.state.address.location.region}, `}
+                                    {/* {`${this.state.address.location.region}, `} */}
                                     {`${this.state.address.location.country} `}
                                     {this.state.address.location.postalCode}
                                 </h3>

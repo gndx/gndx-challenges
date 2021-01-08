@@ -1,3 +1,5 @@
+@require('master.styl')
+
 searchBorderRadius = 1em
 veryDarkGray = hsl(0, 0%, 17%)
 
@@ -37,4 +39,11 @@ veryDarkGray = hsl(0, 0%, 17%)
                 transition: .25s
                 &:focus, &:hover
                     background-color: veryDarkGray
+@media only screen and (max-width: md)
+    .hero form
+        width: 90%
+        grid-column: 1 / 4
+        div 
+            button
+                width: 100%
     
