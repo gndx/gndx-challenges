@@ -8,8 +8,11 @@ class Map extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { id: 'map' }
+        this.state = { 
+            id: 'map',
+            height: 0        
         }
+    }
 
     // Map is defined here so that it can be destroyed on unmount
     map;
@@ -29,6 +32,10 @@ class Map extends Component {
             let newPos = L.latLng(mapData.location.lat, mapData.location.lng);
             this.map.setView(newPos, this.map.getZoom());
         });
+
+        this.setState({
+            height: addressService.consumeHeight()
+        })
     };
     
     componentWillUnmount() {
@@ -39,7 +46,7 @@ class Map extends Component {
     // TODO: make map containter height adjustable to screen size
     render() {
         return(
-            <div id={this.state.id} style={{height: '400px'}}></div>
+            <div id={this.state.id} style={{height: window.innerHeight - this.state.height }}></div>
         );
     };
 }

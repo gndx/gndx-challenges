@@ -1,59 +1,72 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import '../static/css/header.css'
+import React, { Component, createRef } from 'react';
 import { geoIpifyAPIKey, geoIpifyAPIUrl } from '../utils/credentials.js';
 import { urlProtocolRegex, urlRegex, ipRegex } from '../utils/regex-weburl.js';
 import addressService from '../utils/addressService.js';
+import '../static/css/header.css'
 
-const Header = () => {
-    const [address, changeAddress] = useState('');
+class Header extends Component {
+    constructor(props){
+        super(props);
 
-    const getGeoData = (ip) => {
+        this.state = {
+            address: '',
+            ref: createRef()
+        };
+    }
+
+    getGeoData = (ip) => {
         let http = require('http');
         http.get(`${geoIpifyAPIUrl}apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`, res => {
             let rawData = '';
             res.on('data', chunk => rawData += chunk);
             res.on('end', () => addressService.notify(JSON.parse(rawData)) );
         }).end();
-    }
-
-    const validateInput = () => {
+    };
+    
+    validateInput = () => {
         let ip;
-        if(urlRegex.test(address)) { // Is url
+        if(urlRegex.test(this.state.address)) { // Is url
             // TODO: Resolve address
-        }else if(ipRegex.test(address)) // Is IP. 
+        }else if(ipRegex.test(this.state.address)) // Is IP. 
             // Remove protocol from IP if neccessary
-            ip = address.replace(urlProtocolRegex, '');            
+            ip = this.state.address.replace(urlProtocolRegex, '');            
         return ip;
-    }
-
-    const handleSearch = e => {
-        let ip = validateInput();
+    };
+    
+    handleSearch = e => {
+        let ip = this.validateInput();
         if(ip)
-            getGeoData(ip);
+            this.getGeoData(ip);
         
-        changeAddress('');
+        this.setState({address: ''})
         e.preventDefault();
         e.stopPropagation();
+    };
+
+    render() {
+        return (
+            <header>
+                <div ref={this.state.ref} className="hero">
+                    <h2>IP Address Tracker</h2>
+                    <form id="search" onSubmit={this.handleSearch}>
+                        <div>
+                            <input type="text" 
+                                placeholder="Search for any IP address or domain"
+                                value={this.state.address}
+                                onChange={e => this.setState({address: e.target.value})}    
+                            />
+                            <button type="submit" form="search">&gt;</button>
+                        </div>
+                    </form>
+                </div>
+            </header>
+        );
     }
 
-    return (
-        <header>
-            <div className="hero">
-                <h2>IP Address Tracker</h2>
-                <form id="search" onSubmit={handleSearch}>
-                    <div>
-                        <input type="text" 
-                            placeholder="Search for any IP address or domain"
-                            value={address}
-                            onChange={e => changeAddress(e.target.value)}    
-                        />
-                        <button type="submit" form="search">&gt;</button>
-                    </div>
-                </form>
-            </div>
-        </header>
-    );
+    componentDidMount() {
+        this.setState({ address: ''});
+        addressService.reportHeight(this.state.ref.current.clientHeight);
+    };
 }
 
 export default Header;
