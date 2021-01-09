@@ -1,49 +1,58 @@
 @require('master.styl')
-.row
-    display: grid
-    grid: 1fr / 1fr 1fr 1fr 1fr
-    justify-items: center    
-    grid-column: 2
-    border-radius: 1em
-    box-shadow: 0px 2.5px 15px -5px rgba(0,0,0,0.75)
-    background-color: white
-    padding: 20px
-    div
-        width: 100%
-        p
-            color: hsl(0, 0%, 59%)
-        h3
-            color: hsl(0, 0%, 17%)
-        p, h3
-            margin: 10px 20px
 
 .container
-    display: grid
-    grid: 1fr / 10% 80% 10%
+    // flex properties
+    display: flex
+    align-items: stretch
+    justify-content: space-evenly
+    
+    // center horizontally
+    left: 50%
     position: absolute
-    z-index: 1000
-    transform: translate(0, -50%)
-    width: 100%
-    min-height: 75px
-    transition: 1s ease-in
+    transform: translate(-50%, -50%)
 
-.collapse
-    height: 25%
-.collapse-item
-    display: none
+    height: auto
+    z-index: 1000
+    padding: 0 20px 
+    background-color: white
+    border-radius: borderRadius
+
+    p
+        margin-bottom: 0
+        color: darkGray 
+        font-weight: fontRegular
+        font-size: 14px
+    h3
+        margin-top: 0
+        color: veryDarkGray
+        font-weight: fontBold
+        font-size: 22.5px
+
+.data-cell
+    width: 20vw
 
 .divider
-    border-right: 1px solid hsl(0, 0%, 59%)
+    width: 1px
+    margin: 20px 5px 
+    background-color: darkGray
+    // Make sure divider shows
+    &:after
+        content: '\200b'
 
-@media only screen and (max-width: sm)
-    .row
-        grid: 1fr 1fr 1fr 1fr / 1fr
-        padding: 0
-        text-align: center
-        width: 100%
-    .divider 
-        border-right: none
+.collapse
+    display: none
+
+ @media only screen and (max-width: sm)
     .container
-        transform: none
-        grid: 1fr / 5% 90% 5%
         top: 200px
+        padding: 0px
+        text-align: center
+        flex-flow: row wrap
+        align-content: center
+        transform: translate(-50%, 0)
+
+    .data-cell
+        width: 90vw
+
+    .divider
+        display: none
