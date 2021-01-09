@@ -66,6 +66,9 @@ class Header extends Component {
     componentDidMount() {
         this.setState({ address: ''});
         addressService.reportHeight(this.state.ref.current.clientHeight);
+
+        // Initial ip
+        this.reportIpLocation('8.8.8.8');
     };
 }
 
