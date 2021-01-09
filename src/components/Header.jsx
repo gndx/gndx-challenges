@@ -14,7 +14,7 @@ class Header extends Component {
         };
     }
 
-    getGeoData = (ip) => {
+    reportIpLocation = (ip) => {
         let http = require('http');
         http.get(`${geoIpifyAPIUrl}apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`, res => {
             let rawData = '';
@@ -36,7 +36,7 @@ class Header extends Component {
     handleSearch = e => {
         let ip = this.validateInput();
         if(ip)
-            this.getGeoData(ip);
+            this.reportIpLocation(ip);
         
         this.setState({address: ''})
         e.preventDefault();
