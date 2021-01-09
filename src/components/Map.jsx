@@ -27,10 +27,15 @@ class Map extends Component {
             zoomOffset: -1,
             accessToken: mapboxAPIAccessToken
         }).addTo(this.map);
+
+        if (L.Browser.mobile) {
+            this.map.removeControl(this.map.zoomControl);
+         }
         
         addressService.suscribe(this.state.id, mapData => {
             let newPos = L.latLng(mapData.location.lat, mapData.location.lng);
             this.map.setView(newPos, this.map.getZoom());
+            L.marker(newPos).addTo(this.map);
         });
 
         this.setState({

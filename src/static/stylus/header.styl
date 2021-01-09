@@ -1,5 +1,4 @@
-searchBorderRadius = 1em
-veryDarkGray = hsl(0, 0%, 17%)
+@require('master.styl')
 
 .hero
     background-image: url('/src/static/images/pattern-bg.png')
@@ -27,14 +26,23 @@ veryDarkGray = hsl(0, 0%, 17%)
                 box-sizing: border-box
                 padding: 12px 20px
                 border: none
-                border-radius: searchBorderRadius 0px 0px searchBorderRadius
+                border-radius: borderRadius 0px 0px borderRadius
+                font-size: 18px
+                font-weight: fontRegular
             button
                 color: white
                 background-color: black
                 border: none
-                border-radius: 0px searchBorderRadius searchBorderRadius 0px
+                border-radius: 0px borderRadius borderRadius 0px
                 width: 75%
                 transition: .25s
                 &:focus, &:hover
                     background-color: veryDarkGray
+@media only screen and (max-width: md)
+    .hero form
+        width: 90%
+        grid-column: 1 / 4
+        div 
+            button
+                width: 100%
     
