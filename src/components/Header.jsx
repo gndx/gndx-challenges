@@ -30,10 +30,10 @@ class Header extends Component {
             .then(res => res.json())
             .then(data =>{
                 for(let address in data.Answer){
-                    if(address.type !== 1)
-                        continue;
-
-                    this.reportIpLocation(address.data);
+                    if(address.type === 1) {
+                        this.reportIpLocation(address.data);
+                        break;
+                    }
                 }
             })
             .catch(err => console.log(err));
