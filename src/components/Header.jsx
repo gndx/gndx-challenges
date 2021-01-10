@@ -2,6 +2,7 @@ import React, { Component, createRef } from 'react';
 import { geoIpifyAPIKey, geoIpifyAPIUrl } from '../utils/credentials.js';
 import { urlProtocolRegex, urlRegex, ipRegex } from '../utils/regex-weburl.js';
 import addressService from '../utils/addressService.js';
+import axios from 'axios';
 import '../static/css/header.css'
 
 class Header extends Component {
@@ -14,39 +15,35 @@ class Header extends Component {
         };
     }
 
-    reportIpLocation = (ip) => {
-        let http = require('http');
-        http.get(`${geoIpifyAPIUrl}apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`, res => {
-            let rawData = '';
-            res.on('data', chunk => rawData += chunk);
-            res.on('end', () => addressService.notify(JSON.parse(rawData)) );
-        }).end();
+    // The ipify API is returning a empty response when request is made outside localhost
+    reportIpLocation = async ip => {
+        // await axios.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat')
+        await axios.get(`${geoIpifyAPIUrl}?apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`)
+        .then(res => {
+            console.log(res.data)
+            if(typeof res.data === 'object' || res.data instanceof Object)
+                addressService.notify(res.data);
+        })
     };
     
-    validateInput = () => {
-        let ip;
+    validateAndSubmit = async () => {
         if(urlRegex.test(this.state.address)) { // Is url
-            fetch(`https://dns.google/resolve?name=${this.state.address}`)
-            .then(res => res.json())
-            .then(data =>{
-                for(let address in data.Answer){
-                    if(address.type === 1) {
-                        this.reportIpLocation(address.data);
+            await axios.get(`https://dns.google/resolve?name=${this.state.address}`)
+            .then(res => {
+                for(let i in res.data.Answer){
+                    if(res.data.Answer[i].type === 1) {
+                        this.reportIpLocation(res.data.Answer[i].data);
                         break;
                     }
                 }
-            })
-            .catch(err => console.log(err));
+            }).catch(err => console.log(err));
         }else if(ipRegex.test(this.state.address)) // Is IP. 
             // Remove protocol from IP if neccessary
-            ip = this.state.address.replace(urlProtocolRegex, '');            
-        return ip;
+            this.reportIpLocation(this.state.address.replace(urlProtocolRegex, ''));
     };
     
     handleSearch = e => {
-        let ip = this.validateInput();
-        if(ip)
-            this.reportIpLocation(ip);
+        this.validateAndSubmit();
         
         this.setState({address: ''})
         e.preventDefault();
