@@ -26,7 +26,16 @@ class Header extends Component {
     validateInput = () => {
         let ip;
         if(urlRegex.test(this.state.address)) { // Is url
-            // TODO: Resolve address
+            // Test if IP can be resolved through native library 
+            let dns = require('dns');
+            dns.resolve4(this.state.address, (err, add) => console.log(add));
+
+            // Test if IP can be resolved through public API
+            // localhost is being blocked by CORS policy
+            fetch(`http://api.konvert.me/forward-dns/${this.state.address}`)
+                .then(res => res.json())
+                .then(res => console.log(res))
+                .catch(err => console.log(err));
         }else if(ipRegex.test(this.state.address)) // Is IP. 
             // Remove protocol from IP if neccessary
             ip = this.state.address.replace(urlProtocolRegex, '');            
