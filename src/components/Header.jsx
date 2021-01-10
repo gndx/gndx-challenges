@@ -28,8 +28,15 @@ class Header extends Component {
         if(urlRegex.test(this.state.address)) { // Is url
             fetch(`https://dns.google/resolve?name=${this.state.address}`)
             .then(res => res.json())
-            .then(data => console.log(data))
-                .catch(err => console.log(err));
+            .then(data =>{
+                for(let address in data.Answer){
+                    if(address.type !== 1)
+                        continue;
+
+                    this.reportIpLocation(address.data);
+                }
+            })
+            .catch(err => console.log(err));
         }else if(ipRegex.test(this.state.address)) // Is IP. 
             // Remove protocol from IP if neccessary
             ip = this.state.address.replace(urlProtocolRegex, '');            
