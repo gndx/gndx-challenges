@@ -1,5 +1,5 @@
 import React, { Component, createRef } from 'react';
-import { geoIpifyAPIKey, geoIpifyAPIUrl } from '../utils/credentials.js';
+import { ipregistryAPIKey } from '../utils/credentials.js';
 import { urlProtocolRegex, urlRegex, ipRegex } from '../utils/regex-weburl.js';
 import addressService from '../utils/addressService.js';
 import axios from 'axios';
@@ -15,24 +15,39 @@ class Header extends Component {
         };
     }
 
-    // The ipify API is returning a empty response when request is made outside localhost
     reportIpLocation = async ip => {
-        // await axios.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat')
-        await axios.get(`${geoIpifyAPIUrl}?apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`)
-        .then(res => {
-            console.log(res.data)
-            if(typeof res.data === 'object' || res.data instanceof Object)
-                addressService.notify(res.data);
-        })
+        /* 
+         * For some unknown reason, doing a request to any of these APIs
+         * results in a empty response with a 200 OK status
+         */
+        // let apiUri = `https://geo.ipify.org/api/v1?apiKey=${geoIpifyAPIKey}&ipAddress=${ip}`
+        // let apiUri = `https://api.ipstack.com/190.199.123.216?access_key=${ipstackAPIKey}`;
+        // let apiUri = 'http://ip-api.com/json/24.48.0.1';
+        // let apiUri = 'https://ipapi.co/8.8.8.8/json/';
+        // let apiUri = ' https://freegeoip.app/json/8.8.8.8';
+        // let apiUri = 'https://extreme-ip-lookup.com/json/63.70.164.200'
+        // let apiUri = 'https://api.ipdata.co/8.8.8.8?api-key=test'
+        
+        /*
+         * These were the only APIs which returned the expected response
+         *  API was chosen based on https support.
+         */
+        // let apiUri = 'http://ipwhois.app/json/8.8.4.4';
+        let apiUri = `https://api.ipregistry.co/${ip}?key=${ipregistryAPIKey}`
+
+        await axios.get(apiUri)
+            .then(res => addressService.notify(res.data))
+            .catch(err => console.log(err));
     };
     
     validateAndSubmit = async () => {
         if(urlRegex.test(this.state.address)) { // Is url
             await axios.get(`https://dns.google/resolve?name=${this.state.address}`)
             .then(res => {
-                for(let i in res.data.Answer){
-                    if(res.data.Answer[i].type === 1) {
-                        this.reportIpLocation(res.data.Answer[i].data);
+                let answer = res.data.Answer;
+                for(let i in answer){
+                    if(answer[i].type === 1) {
+                        this.reportIpLocation(answer[i].data);
                         break;
                     }
                 }
