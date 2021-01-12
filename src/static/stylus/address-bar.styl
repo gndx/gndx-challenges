@@ -39,8 +39,14 @@
     &:after
         content: '\200b'
 
-.collapse
+.collapse, .collapse-btn-container
     display: none
+
+@keyframes fade
+    from
+        visibility: visible
+    to
+        visibility: hidden
 
  @media only screen and (max-width: sm)
     .container
@@ -50,9 +56,28 @@
         flex-flow: row wrap
         align-content: center
         transform: translate(-50%, 0)
-
+        animation: fade 1s ease
     .data-cell
         width: 90vw
+        transition: .25s
 
     .divider
         display: none
+
+    .collapse-btn-container
+        // align the image
+        display: grid
+        grid: 1fr / 85% 1fr
+        justify-items: end;
+
+        // align the cotainer
+        position: absolute
+        right: 1em
+        top: 1em
+
+        & img 
+            max-width: 100%
+            grid-column: 2
+
+    .collapse-btn-pressed
+        transform: rotate(180deg)

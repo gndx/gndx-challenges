@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import addressService from '../utils/addressService.js';
 import '../static/css/address-bar.css';
+import btnIcon from '../static/images/up-arrow-angle.svg'
 
 class AddressBar extends Component {
     constructor(props){
@@ -59,6 +60,9 @@ class AddressBar extends Component {
         let first = true;
         for(let child of e.currentTarget.children){
             if(first){
+                // where children[2] refers to the collapse button container
+                child.children[2].children[0].classList.toggle('collapse-btn-pressed');
+
                 first = false;
                 continue;
             }                
@@ -76,6 +80,9 @@ class AddressBar extends Component {
                             <div className="data-cell">
                                 <p>IP ADDRESS</p>
                                 <h3>{this.state.ip}</h3>
+                                <div className="collapse-btn-container">
+                                    <img src={btnIcon} alt="Collapse button"/>
+                                </div>
                             </div>
                             <div className="divider"></div>
                             <div className="data-cell">
