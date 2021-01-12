@@ -33,7 +33,7 @@ class Map extends Component {
          }
         
         addressService.suscribe(this.state.id, mapData => {
-            let newPos = L.latLng(mapData.location.lat, mapData.location.lng);
+            let newPos = L.latLng(mapData.location.latitude, mapData.location.longitude);
             this.map.setView(newPos, this.map.getZoom());
             L.marker(newPos).addTo(this.map);
         });

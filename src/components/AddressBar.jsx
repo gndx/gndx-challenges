@@ -6,13 +6,42 @@ class AddressBar extends Component {
     constructor(props){
         super(props);
         this.state = {
-            address: null,
-            id: 'address-bar'
+            id: 'address-bar',
+            online: false,
+            ip: null,
+            location: null,
+            timezone: null,
+            isp: null
         };
     }
 
+    getLocation = data => {
+        let location = 'unavailable';
+        if(data)
+            location = `${data.city}, ${data.country.name} ${data.postal}`;
+        return location;
+    }
+
+    getTimezone = data => {
+        let timezone = 'unavailable';
+        if(data)
+            timezone = `UTC ${data.offset / 3600}`
+        return timezone;
+    }
+
     componentDidMount(){
-        addressService.suscribe(this.state.id, data => this.setState({ address: data }));
+        addressService.suscribe(this.state.id, data => {
+            this.setState(data ? 
+                {
+                    online: true,
+                    ip: data.ip ? data.ip : 'unavailable',
+                    location: this.getLocation(data.location),
+                    timezone: this.getTimezone(data.time_zone),
+                    isp: data.connection ? data.connection.organization : 'unavailable'
+                }
+                : { online: false }
+            );
+        });
     }
 
     componentWillUnmount(){
@@ -41,44 +70,35 @@ class AddressBar extends Component {
         return(
             <section id={this.state.id}>
                 <div className="container" onClick={this.handleClick}>
-                    <div className="data-cell">
-                        <p>IP ADDRESS</p>
-                        {
-                            this.state.address &&
-                            <h3> {this.state.address.ip}</h3>
-                        }
-                    </div>
-                    <div className="divider"></div>
-                    <div className="data-cell">
-                        <p>LOCATION</p>
-                        {
-                            this.state.address &&
-                            this.state.address.location &&
-                            <h3>
-                                {`${this.state.address.location.city}, `}
-                                {/* {`${this.state.address.location.region}, `} */}
-                                {`${this.state.address.location.country} `}
-                                {this.state.address.location.postalCode}
-                            </h3>
-                        }
-                    </div>
-                    <div className="divider"></div>
-                    <div className="data-cell">
-                        <p>TIMEZONE</p>
-                        {
-                            this.state.address &&
-                            this.state.address.location &&
-                            <h3>{`UTC ${this.state.address.location.timezone}`}</h3>
-                        }
-                    </div>
-                    <div className="divider"></div>
-                    <div className="data-cell">
-                        <p>ISP</p>
-                        {
-                            this.state.address &&
-                            <h3>{this.state.address.isp}</h3>
-                        }
-                    </div>
+                    {
+                        this.state.online ?
+                        <>
+                            <div className="data-cell">
+                                <p>IP ADDRESS</p>
+                                <h3>{this.state.ip}</h3>
+                            </div>
+                            <div className="divider"></div>
+                            <div className="data-cell">
+                                <p>LOCATION</p>
+                                <h3>{this.state.location}</h3>
+                            </div>
+                            <div className="divider"></div>
+                            <div className="data-cell">
+                                <p>TIMEZONE</p>
+                                <h3>{this.state.timezone}</h3>
+                            </div>
+                            <div className="divider"></div>
+                            <div className="data-cell">
+                                <p>ISP</p>
+                                <h3>{this.state.isp}</h3>
+                            </div>
+                        </>
+                        : 
+                        <div className="data-cell">
+                            <p>Oops! something went wrong</p>
+                            <h3>Service unavailable :c</h3>
+                        </div>
+                    }
                 </div>
             </section>
         );
