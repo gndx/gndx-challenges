@@ -41,8 +41,10 @@ class Header extends Component {
     };
     
     validateAndSubmit = async () => {
+        let address = this.state.address.replace(urlProtocolRegex, '');
         if(urlRegex.test(this.state.address)) { // Is url
-            await axios.get(`https://dns.google/resolve?name=${this.state.address}`)
+            let siteName = address.split('/')[0];
+            await axios.get(`https://dns.google/resolve?name=${siteName}&type=A`)
             .then(res => {
                 let answer = res.data.Answer;
                 for(let i in answer){
@@ -53,8 +55,7 @@ class Header extends Component {
                 }
             }).catch(err => console.log(err));
         }else if(ipRegex.test(this.state.address)) // Is IP. 
-            // Remove protocol from IP if neccessary
-            this.reportIpLocation(this.state.address.replace(urlProtocolRegex, ''));
+            this.reportIpLocation(address);
     };
     
     handleSearch = e => {
