@@ -1,0 +1,78 @@
+@require('master.styl')
+
+.container
+    // flex properties
+    display: flex
+    align-items: stretch
+    justify-content: space-evenly
+    
+    // center horizontally
+    left: 50%
+    position: absolute
+    transform: translate(-50%, -50%)
+
+    height: auto
+    z-index: 1000
+    padding: 0 20px 
+    background-color: white
+    border-radius: borderRadius
+
+    p
+        margin-bottom: 0
+        color: darkGray 
+        font-weight: fontRegular
+        font-size: 14px
+    h3
+        margin-top: 0
+        color: veryDarkGray
+        font-weight: fontBold
+        font-size: 22.5px
+
+.data-cell
+    width: 20vw
+
+.divider
+    width: 1px
+    margin: 20px 5px 
+    background-color: darkGray
+    // Make sure divider shows
+    &:after
+        content: '\200b'
+
+.collapse, .collapse-btn-container
+    display: none
+
+ @media only screen and (max-width: sm)
+    .container
+        top: 200px
+        padding: 0px
+        text-align: center
+        flex-flow: row wrap
+        align-content: center
+        transform: translate(-50%, 0)
+
+    .data-cell
+        width: 90vw
+        transition: .25s
+
+    .divider
+        display: none
+
+    .collapse-btn-container
+        // align the image
+        display: grid
+        grid: 1fr / 85% 1fr
+        justify-items: end;
+
+        // align the cotainer
+        position: absolute
+        right: 1em
+        top: 1em
+
+        & img 
+            transition: .25s ease 
+            max-width: 100%
+            grid-column: 2
+
+    .collapse-btn-pressed
+        transform: rotateX(180deg)

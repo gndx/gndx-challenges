@@ -1,0 +1,48 @@
+{
+  "name": "ip-address-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "axios": "^0.21.1",
+    "leaflet": "^1.7.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel watch-css start-js",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "watch-css": "npm run build-css && stylus -c -w src/static/stylus/ --out src/static/css/",
+    "build-css": "stylus -c src/static/stylus/ --out src/static/css/",
+    "start-js": "react-scripts start",
+    "build-js": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "stylus": "^0.54.8"
+  }
+}

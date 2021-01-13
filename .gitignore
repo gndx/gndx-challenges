@@ -1,0 +1,32 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ignore batch scripts
+*.bat
+
+# ignore desired desing/UI images
+/design
+
+# prevent personal credentials from being made public
+# /src/utils/credentials.js 
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

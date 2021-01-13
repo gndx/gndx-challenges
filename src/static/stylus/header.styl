@@ -1,0 +1,48 @@
+@require('master.styl')
+
+.hero
+    background-image: url('/src/static/images/pattern-bg.png')
+    background-repeat: no-repeat
+    background-size: cover
+    justify-items: center
+    height: 250px // Hardcoded height because image is static
+    width: 100%
+    grid: 40% 60% / 20% 60% 20%
+    display: grid
+    h2
+        align-self: end
+        color: white
+        grid-column: 2
+    form
+        grid-column: 2
+        grid-row: 2
+        width: 75%
+        z-index: 1000
+        div
+            min-height: 50px
+            display: grid
+            grid: 100% / 90% 1fr
+            input[type=text]
+                box-sizing: border-box
+                padding: 12px 20px
+                border: none
+                border-radius: borderRadius 0px 0px borderRadius
+                font-size: 18px
+                font-weight: fontRegular
+            button
+                color: white
+                background-color: black
+                border: none
+                border-radius: 0px borderRadius borderRadius 0px
+                width: 75%
+                transition: .25s
+                &:focus, &:hover
+                    background-color: veryDarkGray
+@media only screen and (max-width: md)
+    .hero form
+        width: 90%
+        grid-column: 1 / 4
+        div 
+            button
+                width: 100%
+    
