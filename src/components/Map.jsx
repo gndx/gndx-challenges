@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import L from 'leaflet';
 import { mapboxAPIAccessToken } from '../utils/credentials.js';
 import addressService from '../utils/addressService.js';
+import L from 'leaflet';
+
+// leaflet icon assets
+import icon from '../static/images/icon-location.svg';
+import shadow from  '../static/images/icon-location.svg';
 
 class Map extends Component {
 
@@ -10,7 +14,18 @@ class Map extends Component {
 
         this.state = { 
             id: 'map',
-            height: 0        
+            height: 0,
+            // init marker with custom icon
+            marker: L.marker([51.505, -0.09], {
+                icon: L.icon({
+                    iconUrl: icon,
+                    iconSize:   [46, 56],
+                    iconAnchor: [23, 56],
+                    shadowUrl: shadow,
+                    shadowSize:   [11, 14],
+                    shadowAnchor: [5.5, 14]
+                })
+            })
         }
     }
 
@@ -28,14 +43,19 @@ class Map extends Component {
             accessToken: mapboxAPIAccessToken
         }).addTo(this.map);
 
-        if (L.Browser.mobile) {
+        // add marker to map
+        this.state.marker.addTo(this.map);
+
+        // remove zoom control from mobile
+        if (L.Browser.mobile) 
             this.map.removeControl(this.map.zoomControl);
-         }
         
         addressService.suscribe(this.state.id, mapData => {
             let newPos = L.latLng(mapData.location.latitude, mapData.location.longitude);
+            // update view
             this.map.setView(newPos, this.map.getZoom());
-            L.marker(newPos).addTo(this.map);
+            // update marker
+            this.state.marker.setLatLng(newPos);
         });
 
         this.setState({
@@ -48,7 +68,6 @@ class Map extends Component {
         addressService.unsuscribe(this.state.id);
     }
 
-    // TODO: make map containter height adjustable to screen size
     render() {
         return(
             <div id={this.state.id} style={{height: window.innerHeight - this.state.height }}></div>
