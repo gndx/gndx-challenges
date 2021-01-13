@@ -19,14 +19,14 @@ class AddressBar extends Component {
     getLocation = data => {
         let location = 'unavailable';
         if(data)
-            location = `${data.city}, ${data.country.name} ${data.postal}`;
+            location = `${data.city ? data.city + ',' : ''} ${data.country.name ? data.country.name : ''} ${data.postal ? data.postal : ''}`;
         return location;
     }
 
     getTimezone = data => {
         let timezone = 'unavailable';
         if(data)
-            timezone = `UTC ${data.offset / 3600}`
+            timezone = `UTC ${data.offset ? data.offset / 3600 + ':00' : ''}`
         return timezone;
     }
 
