@@ -1,13 +1,14 @@
 ## [gndx@stream]:~$ gndx challenges
 
-- Name:
-- GitHub
-- Twitter:
-- Twitch:
-- Repositorio:
+- Name: Simón Briceño
+- GitHub: https://github.com/SimonBrial
+- Twitter: @SimonBrial
+- Twitch: No tengo
+- Repositorio: https://github.com/SimonBrial/404-not-found
+- Deploy: https://courageous-macaron-a140ed.netlify.app/
 
 ## challenge:
-  - [ ] 404 Not fount
+  - [X] 404 Not fount
   - [ ] Social media dashboard
   - [ ] Image Uploader
   - [ ] Weather app
